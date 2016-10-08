@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- bean 등록 -> spring container 에서 자동 생성 -->
+	<!-- 타이핑 , Editor -->
+
+
+	<bean id="dog" class="kr.ac.hansung.spring.di.Dog">
+		<property name="myName" value="poodle"></property>
+	</bean>
+
+	<bean id="cat" class="kr.ac.hansung.spring.di.Cat">
+		<property name="myName" value="bella">
+		</property>
+	</bean>
+
+	<!-- 생성자 통한 DI -->
+	<bean id="petOwner" class="kr.ac.hansung.spring.di.PetOwner">
+		<constructor-arg ref="dog"></constructor-arg>
+	</bean>
+
+
+</beans>
